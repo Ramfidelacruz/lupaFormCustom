@@ -1,0 +1,69 @@
+<!-- Primero el HTML -->
+<div class="custom-form-container">
+    <h2 class="form-title">Complete este formulario para<br> solicitar nuestro Servicio de Vacunación.</h2>
+    
+    <div class="step-indicator">
+        <div class="step-circle active" id="step1-circle">1</div>
+        <div class="step-line"></div>
+        <div class="step-circle" id="step2-circle">2</div>
+    </div>
+
+    <form id="multistep-form">
+        <div class="form-step step1 active" id="step1">
+            <input type="text" class="form-input" placeholder="Nombre" name="nombre" required>
+            <input type="text" class="form-input" placeholder="Apellido" name="apellido" required>
+            <input type="email" class="form-input" placeholder="Correo electrónico" name="email" required>
+            <input type="tel" class="form-input" placeholder="Teléfono" name="telefono" required>
+            <div class="button-container">
+    <button type="button" class="btn btn-next" id="next-button">SIGUIENTE</button>
+</div>
+        </div>
+
+        <div class="form-step step2" id="step2" style="display: none;">
+            <select class="form-select" name="servicios" required>
+                <option value="">Servicios</option>
+                <option value="personal_servicio">Servicio Personal</option>
+                <option value="empresiarial_servicio">Servicio Empresarial</option>
+            </select>
+            
+            <select class="form-select" name="sucursales" required>
+                <option value="">Sucursales</option>
+                <option value="mega_centro">Mega Centro</option>
+            </select>
+
+            <select class="form-select" name="vacunas" required>
+                <option value="">Vacunas</option>
+                <option value="Pediátricas">Pediátricas</option>
+                <option value="Hep._B">Hep. B</option>
+                <option value="Meningococo_(cepas_ACYW)">Meningococo (cepas ACYW)</option>
+                <option value="Dift.Tetano_Pertus+Polio+Hep.B_+_HIB">Dift.Tetano Pertus+Polio+Hep.B + HIB</option>
+                <option value="Hep._A">Hep. A</option>
+                <option value="Polio">Polio</option>
+                <option value="Dift.Pertus_Tetanos_+Polio+HiB">Dift.Pertus Tetanos +Polio+HiB</option>
+                <option value="Dift+Tétano+Pertusi+Polio">Dift+Tétano+Pertusi+Polio</option>
+                <option value="Neumococo_Conj._(13_cepas)">Neumococo Conj. (13 cepas)</option>
+                <option value="Rotavirus_(5_cepas)">Rotavirus (5 cepas)</option>
+                <option value="Sarampión,_Rubeola,_Paperas">Sarampión, Rubeola, Paperas</option>
+                <option value="Varicela">Varicela</option>
+                <option value="Influenza">Influenza</option>
+                <option value="Papiloma">Papiloma</option>
+                <option value="Difteria,_Pertusis_acelular,_Tetanos">Difteria, Pertusis acelular, Tetanos</option>
+                <option value="Vacunas_Adultos">Vacunas Adultos</option>
+                <option value="Neumococo">Neumococo</option>
+            </select>
+
+            <input type="date" class="form-input" name="fecha" id="fecha" required>
+            <select class="form-select" name="hora" id="hora-select" required>
+                <option value="">Seleccione hora</option>
+            </select>
+
+            <textarea class="form-input" placeholder="Observación" name="observacion"></textarea>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-back" id="prev-button">Atrás</button>
+                <button type="submit" class="btn btn-submit">Agendar Cita</button>
+            </div>
+        </div>
+    </form>
+</div>
+

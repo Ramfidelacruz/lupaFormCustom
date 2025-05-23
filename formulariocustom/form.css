@@ -1,0 +1,126 @@
+<!-- Luego el CSS -->
+<style>+
+
+body {
+    background-color: #F9FAFB;  /* Gris muy claro casi imperceptible */
+    padding: 20px;
+}
+
+.custom-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;  /* Aumentamos el padding interno */
+    font-family: Arial, sans-serif;
+    border: 1px solid #E5E7EB;  /* Borde muy sutil en gris claro */
+    border-radius: 16px;        /* Bordes redondeados */
+    background-color: white;    /* Fondo blanco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+}
+
+.form-title {
+        text-align: center;
+    color: #979C9E;
+    margin-bottom: 30px;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.step-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.step-circle.active {
+    background-color: #FCD34D;
+}
+
+.step-line {
+    height: 2px;
+    width: 100px;
+    background-color: #E5E7EB;
+    margin: 0 10px;
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    background-color: #F3F4F6;
+    box-sizing: border-box;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 14px 65px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.btn-next, .btn-submit {
+    background-color: gray;
+    color: white;
+}
+
+.btn-back {
+    background-color: #9CA3AF;
+    color: white;
+}
+
+[type=button]:focus, [type=button]:hover, [type=submit]:focus, [type=submit]:hover, button:focus, button:hover {
+    color: #fff;
+    background-color: #FCD34D !important;
+    text-decoration: none;
+}
+
+input[type=date], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea {
+    width: 100%;
+    border: 2px solid #E5E7EB;
+    border-radius: 35px;
+    padding: 1.5rem 1rem;
+    transition: all .3s;
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 15px;
+    border: 2px solid #E5E7EB;
+    border-radius: 51px;
+    background-color: #F3F4F6;
+    box-sizing: border-box;
+}
+</style>
