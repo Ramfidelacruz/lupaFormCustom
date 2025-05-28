@@ -41,7 +41,7 @@ function procesar_formulario_lupa($request) {
         }
 
         // Enviar email
-        $to = get_option('admin_email'); // Correo del administrador de WordPress
+        $to = 'info@lupard.com'; // Correo específico de Lupard
         $subject = 'Nuevo mensaje de contacto - ' . $params['nombre'];
         $mensaje = "Se ha recibido un nuevo mensaje de contacto:\n\n";
         $mensaje .= "Nombre: " . $params['nombre'] . "\n";
