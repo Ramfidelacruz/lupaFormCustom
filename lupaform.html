@@ -1,201 +1,211 @@
 <!-- Formulario de contacto para WordPress -->
 <style>
-    /* Reseteo de estilos específicos para el formulario */
-    .wp-contact-form-container * {
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-    
+  /* Reseteo de estilos específicos para el formulario */
+  .wp-contact-form-container * {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .wp-contact-form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .wp-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .wp-contact-form input,
+  .wp-contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .wp-contact-form input::placeholder,
+  .wp-contact-form textarea::placeholder {
+    color: #999;
+  }
+  
+  .wp-contact-form input:focus,
+  .wp-contact-form textarea:focus {
+    outline: none;
+    border-color: #f47321;
+    transform: scale(1.02);
+  }
+  
+  .wp-contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .wp-submit-button {
+    width: 100%;
+    padding: 18px;
+    background-color: #f47321;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .wp-submit-button:hover {
+    background-color: #e05f10;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(244, 115, 33, 0.3);
+  }
+
+  .wp-form-message {
+    display: none;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .wp-form-message.success {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .wp-form-message.error {
+    background-color: #f44336;
+    color: white;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
     .wp-contact-form-container {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      border-radius: 8px;
+      padding: 15px;
     }
     
-    .wp-contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .wp-contact-form input,
+    .wp-contact-form textarea,
+    .wp-submit-button {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wp-contact-form-container {
+      padding: 10px;
     }
     
     .wp-contact-form input,
     .wp-contact-form textarea {
-      width: 100%;
-      padding: 15px 20px;
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 6px;
-      color: #fff;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-    
-    .wp-contact-form input::placeholder,
-    .wp-contact-form textarea::placeholder {
-      color: #999;
-    }
-    
-    .wp-contact-form input:focus,
-    .wp-contact-form textarea:focus {
-      outline: none;
-      border-color: #f47321;
-      transform: scale(1.02);
-    }
-    
-    .wp-contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
+      padding: 10px;
+      font-size: 14px;
     }
     
     .wp-submit-button {
-      width: 100%;
-      padding: 18px;
-      background-color: #f47321;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 16px;
     }
     
-    .wp-submit-button:hover {
-      background-color: #e05f10;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(244, 115, 33, 0.3);
+    .wp-contact-form {
+      gap: 10px;
     }
-
-    .wp-form-message {
-      display: none;
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 6px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .wp-form-message.success {
-      background-color: #4CAF50;
-      color: white;
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .wp-form-message.error {
-      background-color: #f44336;
-      color: white;
-      transform: translateY(0);
-      opacity: 1;
-    }
-    
-    /* Estilos responsivos */
-    @media (max-width: 768px) {
-      .wp-contact-form-container {
-        padding: 15px;
-      }
-      
-      .wp-contact-form input,
-      .wp-contact-form textarea,
-      .wp-submit-button {
-        padding: 12px;
-        font-size: 16px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .wp-contact-form-container {
-        padding: 10px;
-      }
-      
-      .wp-contact-form input,
-      .wp-contact-form textarea {
-        padding: 10px;
-        font-size: 14px;
-      }
-      
-      .wp-submit-button {
-        font-size: 16px;
-      }
-      
-      .wp-contact-form {
-        gap: 10px;
-      }
-    }
+  }
 </style>
 
 <div class="wp-contact-form-container">
-  <form class="wp-contact-form" id="contactForm">
-    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-    <input type="email" id="correo" name="correo" placeholder="Correo" required>
-    <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
-    <button type="submit" class="wp-submit-button">Enviar</button>
-    <div id="formMessage" class="wp-form-message"></div>
-  </form>
+<form class="wp-contact-form" id="contactForm">
+  <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+  <input type="email" id="correo" name="correo" placeholder="Correo" required>
+  <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+  <button type="submit" class="wp-submit-button">Enviar</button>
+  <div id="formMessage" class="wp-form-message"></div>
+</form>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('contactForm');
-  const messageDiv = document.getElementById('formMessage');
-  
-  if (form) {
-    form.addEventListener('submit', async function(event) {
-      event.preventDefault();
-      
-      const formData = {
-        nombre: document.getElementById('nombre').value,
-        correo: document.getElementById('correo').value,
-        mensaje: document.getElementById('mensaje').value
-      };
-      
-      try {
-        const button = this.querySelector('.wp-submit-button');
-        const originalText = button.textContent;
-        button.textContent = 'Enviando...';
-        button.disabled = true;
-        
-        const response = await fetch('/wp-json/lupaform/v1/enviar', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        });
-        
-        const data = await response.json();
-        
-        messageDiv.textContent = data.message;
-        messageDiv.className = 'wp-form-message ' + (data.status === 'success' ? 'success' : 'error');
-        messageDiv.style.display = 'block';
-        
-        if (data.status === 'success') {
-          form.reset();
-        }
+const form = document.getElementById('contactForm');
+const messageDiv = document.getElementById('formMessage');
 
-        button.textContent = originalText;
-        button.disabled = false;
-      } catch (error) {
-        messageDiv.textContent = 'Error al enviar el formulario. Por favor, intente nuevamente.';
-        messageDiv.className = 'wp-form-message error';
-        messageDiv.style.display = 'block';
+if (form) {
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const formData = {
+      nombre: document.getElementById('nombre').value,
+      correo: document.getElementById('correo').value,
+      mensaje: document.getElementById('mensaje').value
+    };
+    
+    try {
+      const button = this.querySelector('.wp-submit-button');
+      const originalText = button.textContent;
+      button.textContent = 'Enviando...';
+      button.disabled = true;
+      
+      const response = await fetch('/wp-json/lupaform/v1/enviar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        console.error('Error completo:', data);
+        throw new Error(data.message || 'Error en el servidor');
       }
-    });
-
-    // Add smooth focus animations
-    document.querySelectorAll('.wp-contact-form input, .wp-contact-form textarea').forEach(element => {
-      element.addEventListener('focus', function() {
-        this.style.transform = 'scale(1.02)';
-      });
       
-      element.addEventListener('blur', function() {
-        this.style.transform = 'scale(1)';
-      });
+      messageDiv.textContent = data.message;
+      messageDiv.className = 'wp-form-message ' + (data.status === 'success' ? 'success' : 'error');
+      messageDiv.style.display = 'block';
+      
+      if (data.status === 'success') {
+        form.reset();
+      }
+
+      button.textContent = originalText;
+      button.disabled = false;
+    } catch (error) {
+      console.error('Error detallado:', error);
+      messageDiv.textContent = `Error: ${error.message || 'Error al enviar el formulario. Por favor, intente nuevamente.'}`;
+      messageDiv.className = 'wp-form-message error';
+      messageDiv.style.display = 'block';
+      
+      const button = this.querySelector('.wp-submit-button');
+      button.textContent = 'Enviar';
+      button.disabled = false;
+    }
+  });
+
+  // Add smooth focus animations
+  document.querySelectorAll('.wp-contact-form input, .wp-contact-form textarea').forEach(element => {
+    element.addEventListener('focus', function() {
+      this.style.transform = 'scale(1.02)';
     });
-  }
+    
+    element.addEventListener('blur', function() {
+      this.style.transform = 'scale(1)';
+    });
+  });
+}
 });
 </script>
